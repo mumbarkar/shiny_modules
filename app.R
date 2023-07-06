@@ -1,23 +1,23 @@
 # load required library
 library(shiny)
 
-# histogram app
-histogramApp <- function() {
+# visualization app
+vizApp <- function() {
   
   # UI logic
   ui <- 
     fluidPage(
     histogramUI("plot1"),
-    histogramUI("plot2")
+    boxplotUI("plot1")
   )
   
   # server logic
   server <- function(input, output, session) {
     histogramServer("plot1")
-    histogramServer("plot2")
+    boxplotServer("plot1")
   }
   
   # Run the application 
   shinyApp(ui, server)  
 }
-histogramApp()
+vizApp()
